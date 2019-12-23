@@ -1,7 +1,6 @@
 package ru.otus.spring.student;
 
 
-import org.junit.runner.RunWith;
 
 public class Stud implements Person {
     private String name;

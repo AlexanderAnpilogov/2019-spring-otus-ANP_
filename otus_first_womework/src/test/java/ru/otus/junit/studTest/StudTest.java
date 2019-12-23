@@ -1,32 +1,31 @@
-package ru.otus.junit.StudTest;
+package ru.otus.junit.studTest;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import ru.otus.spring.App.TesterApp;
-import ru.otus.spring.CSV.CSV;
-import ru.otus.spring.CSV.Commands;
-import ru.otus.spring.Student.Stud;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.spy;
 
 class StudTest {
-    @DisplayName("Правиьно инициализирует студента при создании")
-    @Test
-    void constructor() {
-        Stud stud = new Stud("Name", "Surname");
 
-        assertEquals("Name", stud.getNama());
-        assertEquals("Surname", stud.getSurnama());
+    Studo stud = new Studo();
+
+    @DisplayName("конструктор работает")
+    @Test
+    void constructorWorkjingWright(){
+        Studo studo = new Studo("Name", "Surname");
+        assertEquals("Name", studo.getNama());
+        assertEquals("Surname", studo.getSurnama());
     }
 
     @DisplayName("методы интерфейса правильно переопределены и работают")
     @Test
     void WrightWorkingOfGetterAndSetter() {
-        Stud stud = new Stud();
-        stud.setNama("f");
-        stud.setSurNama("g");
+        Studo student = new Studo();
+        student.setNama("f");
+        student.setSurNama("g");
 
-        assertEquals("f", stud.getNama());
-        assertEquals("g", stud.getSurnama());
+        assertEquals("f", student.getNama());
+        assertEquals("g", student.getSurnama());
     }
 }

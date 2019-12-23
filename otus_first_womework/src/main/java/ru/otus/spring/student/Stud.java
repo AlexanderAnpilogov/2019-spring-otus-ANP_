@@ -1,13 +1,18 @@
-package ru.otus.spring.Student;
+package ru.otus.spring.student;
+
+
+import org.junit.runner.RunWith;
 
 public class Stud implements Person {
     private String name;
     private String surname;
 
-    public Stud() {
+
+    private Stud() {
     }
 
-    public Stud(String name, String surname) {
+
+    private Stud(String name, String surname) {
         this.name = name;
         this.surname = surname;
     }

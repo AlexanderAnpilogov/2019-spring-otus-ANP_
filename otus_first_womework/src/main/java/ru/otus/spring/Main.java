@@ -2,6 +2,7 @@ package ru.otus.spring;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import ru.otus.spring.app.TesterApp;
+import ru.otus.spring.student.Stud;
 
 
 import java.io.*;

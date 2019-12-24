@@ -43,6 +43,6 @@ public class TesterApp {
 
     public void testEnding() {
         System.out.println("                                " + student.getNama() + " " + student.getSurnama());
-        csv.getUserMark();
+       // csv.getUserMark();
     }
 }

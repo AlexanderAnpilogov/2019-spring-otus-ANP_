@@ -1,5 +1,8 @@
 package ru.otus.spring.app;
 
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 import ru.otus.spring.csv.Commands;
 import ru.otus.spring.student.Person;
 
@@ -8,14 +11,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+@Service
 public class TesterApp {
     private final Commands csv;
     private Person student;
 
-    public TesterApp(Commands csv, Person student) {
-        this.csv = csv;
-        this.student = student;
-    }
+    public TesterApp(Commands csv, Person student) {this.csv = csv; this.student = student;}
 
     public void startApplication() throws IOException {
         identifyStudent();
@@ -23,13 +24,9 @@ public class TesterApp {
         testEnding();
     }
 
-    public void showQuestions() throws IOException {
-        csv.printQuestions();
-    }
+    public void showQuestions() throws IOException { csv.printQuestions(); }
 
-    protected void askAnswers() throws IOException {
-        csv.askAnswers();
-    }
+    protected void askAnswers() throws IOException { csv.askAnswers();}
 
     public void identifyStudent() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -43,6 +40,6 @@ public class TesterApp {
 
     public void testEnding() {
         System.out.println("                                " + student.getNama() + " " + student.getSurnama());
-       // csv.getUserMark();
+        csv.getUserMark();
     }
 }

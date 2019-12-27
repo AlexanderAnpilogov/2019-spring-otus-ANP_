@@ -1,9 +1,28 @@
 package ru.otus.spring.csv;
 
 
-import java.io.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.stereotype.Service;
 
+import java.io.*;
+import java.util.Locale;
+
+
+//позволяет использовать поля моего property-файла используя плейсхолдеры(@Value("${my.csv}") языка SpEL
+//но чтобы использовать SpEL нужно в Main-классе создать Bean PropertySoursePlaceHolderConfigurer( см. Main-class)...
+//@PropertySource("classpath:/info.property")
+@Service
 public class CSV implements Commands {
+
+    public MessageSource messageSource;
+
+   // @Value("${my.csv}")
+   // private String path;
+
     private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     private String[] userAnswerMassive = new String[5];
     private String[] trueAnswers = {"1,3,4", "2", "3", "4", "3,2"};
@@ -39,11 +58,11 @@ public class CSV implements Commands {
 
     @Override
     public void printQuestions() throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader("E:\\OTUS2019\\src\\main\\resources\\questions.csv"));
+
+        FileReader fr =new FileReader(messageSource.getMessage("my.csv",null, Locale.ENGLISH));
+        BufferedReader reader = new BufferedReader(fr);
         String a;
-        while (!(a = reader.readLine()).isEmpty()) {
-            System.out.println(a);
-        }
+        while (!(a = reader.readLine()).isEmpty()) { System.out.println(a);}
         askAnswers();
     }
 

@@ -1,20 +1,16 @@
 package ru.otus.spring.student;
 
 
+import org.springframework.stereotype.Service;
 
+@Service
 public class Stud implements Person {
     private String name;
     private String surname;
 
+    private Stud() { }
 
-    private Stud() {
-    }
-
-
-    private Stud(String name, String surname) {
-        this.name = name;
-        this.surname = surname;
-    }
+    private Stud(String name, String surname) { this.name = name; this.surname = surname; }
 
     private String getName() {
         return name;
@@ -33,10 +29,7 @@ public class Stud implements Person {
     }
 
     @Override
-    public void setNama(String nama) {
-        this.setName(nama);
-
-    }
+    public void setNama(String nama) { this.setName(nama); }
 
     @Override
     public void setSurNama(String surNama) {

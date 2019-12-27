@@ -1,6 +1,4 @@
-
-my.csv=src/main/resourses/questions.csv
-my.yes = 3
+my.csv=/questions.csv
 
 
 

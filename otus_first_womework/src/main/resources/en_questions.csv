@@ -1,0 +1,15 @@
+Questions:
+1)How IoC-Container is configured(ApplicationContext)???
+answer choice: 1)XML; 2)Beans; 3)Annotations; 4)Java-classes; 5)Setters;
+===================================================================
+2)What is IoC???
+answer choice: 1)Independence of Class; 2)Inversion of control;
+==================================================================
+3)What is DI???
+answer choice: 1)Deep I; 2)Dibilnaja Idea; 3)Dependency Injection;
+===================================================================
+4)What is @Bean???
+answer choice: 1)Боб; 2)Объект; 3)Класс 4)Spring Object;
+===================================================================
+5)java or JS?
+answer choice: 1)----; 2)=====; 3)dadad; 4)daad

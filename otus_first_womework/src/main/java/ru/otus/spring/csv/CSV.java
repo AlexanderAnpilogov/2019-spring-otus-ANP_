@@ -59,7 +59,7 @@ public class CSV implements Commands {
     @Override
     public void printQuestions() throws IOException {
 
-        FileReader fr =new FileReader(messageSource.getMessage("my.csv",null, Locale.ENGLISH));
+        FileReader fr =new FileReader(messageSource.getMessage("my.csv",null, null));
         BufferedReader reader = new BufferedReader(fr);
         String a;
         while (!(a = reader.readLine()).isEmpty()) { System.out.println(a);}
